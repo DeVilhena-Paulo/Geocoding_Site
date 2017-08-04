@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geocoding</title>
+    <link rel="icon" href="images/Maps-Pin-Place-icon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-switch.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:400,700,900" rel="stylesheet">
+
+    <script src="js/ajax-utils.js"></script>
+    <script src='js/config.js'></script>
+    <script src="js/script.js"></script>
+
+    <script src="js/jquery.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>Geocoding</h1>
+      </div>
+    </header>
+
+    <a target="_blank" href="https://github.com/DeVilhena-Paulo/Geocoding">
+      <img style="position: absolute; top: 0; right: 0; border: 0; height: 125px;"
+      src="images/forkme_right_white_ffffff.png"
+      alt="Fork me on GitHub">
+    </a>
+
+    <div id="form" class="container">
+      <form class="form-inline">
+        <label class="sr-only" for="inlineFormInputGroup">Code</label>
+    		<div id="code-label" class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon">Code Postal</div>
+          <input id="code" type="text" class="form-control" id="inlineFormInputGroup" placeholder="91120">
+        </div>
+
+        <label class="sr-only" for="inlineFormInputGroup">Commune</label>
+    		<div id="commune-label" class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon">Ville</div>
+          <input id="commune" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Palaiseau">
+        </div>
+
+        <label class="sr-only" for="inlineFormInputGroup">Adresse</label>
+    		<div id="adresse-label" class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon">Adresse</div>
+          <input id="adresse" type="text" class="form-control" id="inlineFormInputGroup" placeholder="12, Boulevard des Maréchaux">
+        </div>
+
+        <div id="switch-label" class="btn btn-primary">
+          <input id="switch" type="checkbox" name="my-checkbox" checked>
+        </div>
+
+        <button id="search-button" type="button" class="btn btn-primary">Search</button>
+      </form>
+    </div><!-- .container -->
+
+    <div id="map"></div>
+
+    <footer class="panel-footer">
+      <div class="container">
+        <div class="row">
+          <section id="hours" class="col-sm-12">
+            <hr>
+            Geocoding is an address search engine for France. Unlike the Google Maps API, it uses a database provided by the french government
+
+            <a target="_blank" style="color: #fff" href="https://adresse.data.gouv.fr/">(Base Adresse Nationale - BAN)</a>
+
+            to compute the geographic location. It is a fully open source project and additionally to the search engine, the project counts with a simple web server to provide unlimited queries.
+            <hr>
+          </section>
+        </div>
+      </div>
+    </footer>
+    <script src="js/bootstrap-switch.js"></script>
+    <script>
+      function initMap() {
+        var myLatLng = {lat: 48.856237, lng: 2.352371};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          map: map,
+          title: 'Geocoding Result'
+        });
+      }
+    </script>
+    <script id="api_load" async defer></script>
+    <script>
+      document.getElementById("api_load").src = "https://maps.googleapis.com/maps/api/js?key=" + config.API_KEY + "&callback=initMap";
+    </script>
+  </body>
+
+</html>

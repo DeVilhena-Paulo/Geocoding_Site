@@ -1,0 +1,111 @@
+body {
+  background-color: #faefd4;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+/** HEADER **/
+header {
+  width: 100%;
+  background-color: #274a61;
+  height: 85px;
+  border-radius: 0;
+  border: 0;
+}
+
+.panel-footer {
+  background-color: #839b99;
+  color: #fff;
+  padding-bottom: 30px;
+}
+
+#greatings {
+  background-color: #000;
+  height: 400px;
+}
+
+.container h1 { /* App name */
+  font-family: 'Maven Pro', sans-serif;
+  padding-top: 20px;
+  color: #fff;
+  font-size: 4em;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: .7;
+}
+
+.form-inline .input-group {
+  margin-top: 20px;
+  border-radius: 0;
+  border: 0;
+}
+
+#search-button {
+  margin-top: 20px;
+  background-color: #274a61;
+  border: 0;
+}
+
+#switch-label {
+  padding-left: 0px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  margin-top: 20px;
+  border: 0;
+}
+
+.input-group-addon {
+  color: #fff;
+  background-color: #859c9a;
+}
+
+ #map {
+   position:relative;
+   height: 400px;
+   width:100%;
+   padding-left: 0;
+   margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #code-label {
+  	width: 170px;
+  }
+  #commune-label {
+  	width: 150px;
+  }
+  #adresse-label {
+  	width: 300px;
+  }
+  #map {
+  	height: 520px;
+  }
+  .panel-footer {
+    padding-bottom: 20px;
+  }
+  .panel-footer div.row {
+    margin-bottom: 10px;
+  }
+  /* End Home Page */
+}
+
+@media (min-width: 1441px) {
+  #map {
+  	height: 650px;
+  }
+  .panel-footer {
+    padding-bottom: 30px;
+  }
+  /* End Home Page */
+}
+
+@media (min-height: 830px) and (min-width: 615px){
+  #map {
+    height: 600px;
+  }
+  .panel-footer {
+    padding-bottom: 50px;
+  }
+  /* End Home Page */
+}
